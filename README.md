@@ -15,6 +15,8 @@ To setup the project for review do the following:
 
 Returns a JSON object with the block info
 
+Response Example:
+
 ```
 {
     "hash": "169fdca47690a209e95e583588c07b248d19f29499fbb8d50c362d457d2c4176",
@@ -27,13 +29,23 @@ Returns a JSON object with the block info
 
 * POST /block
 
-Add a new block to the chain end return the block JSON
+Add a new block to the chain.
+
+Body Example:
+
+```
+{
+    "body": "Your block value",
+}
+```
+
+Response Example:
 
 ```
 {
     "hash": "169fdca47690a209e95e583588c07b248d19f29499fbb8d50c362d457d2c4176",
     "height": 66,
-    "body": "Test Block - 66",
+    "body": "Your block value",
     "time": "1544434070",
     "previousBlockHash": "8c84e5212554e24f3c976ff60057efef1618aa318a8e463027f674bee022a01d"
 }

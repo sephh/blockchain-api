@@ -39,11 +39,15 @@ class BlockController {
 	 * Implement a POST Endpoint to add as new Block, url: "/api/block"
 	 */
 	postNewBlock() {
-		const { blockchain } = this;
-
 		this.express.post('/block', async (req, res) => {
-			const height = await blockchain.getBlockHeight();
-			const blockAux = new Block('Test Block - ' + (height + 1));
+			const body = req.body;
+
+			if(!body || !body.body){
+				res.status(500).send('Missing required field "body"');
+				return;
+			}
+
+			const blockAux = new Block(body.body);
 			const block = await this.blockchain.addBlock(blockAux);
 
 			if (block) {

@@ -15,7 +15,7 @@ class APIServer {
 	}
 
 	initExpress() {
-		this.server.set('port', 800);
+		this.server.set('port', 8000);
 	}
 
 	initExpressMiddleWare() {

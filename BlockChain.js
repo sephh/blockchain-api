@@ -57,11 +57,14 @@ class Blockchain {
 				if (!result) {
 					console.log('Error Adding data');
 				} else {
-					console.log(result);
+					return JSON.parse(result);
 				}
+
+				return result;
 			})
 			.catch((err) => {
 				console.log(err);
+				return err;
 			});
 	}
 
